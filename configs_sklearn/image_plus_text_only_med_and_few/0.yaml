@@ -1,0 +1,25 @@
+clip:
+  visual_backbone: 'RN50'
+
+shuffle: true
+
+dataset_variant: "random_prompts"
+
+optimizer_variant: "LBFGS"
+
+training_opt:
+
+  variation: "image_plus_text_only_med_and_few" # This determines the rule for combining the text and images
+  prompt_set: "ImageNet"
+  lam: 0.75
+
+  batch_size: 512
+  dataset: ImageNet_LT
+  dataloader: "paired"
+
+  feature_dim: 1024
+  num_classes: 1000
+  num_epochs: 300
+  num_workers: 12
+
+  c_regularization: 0.316

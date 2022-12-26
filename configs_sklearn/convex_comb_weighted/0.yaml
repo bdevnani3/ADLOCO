@@ -1,0 +1,22 @@
+clip:
+  visual_backbone: 'RN50'
+
+shuffle: true
+
+dataset_variant: "random_prompts"
+
+optimizer_variant: "LBFGS"
+
+training_opt:
+
+  variation: "image_plus_text_weighted" # This determines the rule for combining the text and images
+  prompt_set: "bestImageNet"
+
+  batch_size: 512
+  dataset: ImageNet_LT
+  dataloader: "paired"
+
+  feature_dim: 1024
+  num_classes: 1000
+  num_epochs: 300
+  num_workers: 12

@@ -1,0 +1,27 @@
+clip:
+  visual_backbone: 'RN50'
+
+shuffle: true
+
+dataset_variant: "LT_Dataset"
+sampler: "oversample"
+sampling_strategy: "auto"
+
+optimizer_variant: "lbfgs"
+
+training_opt:
+
+  variation: "image_linear_probe" # This determines the rule for combining the text and images
+  prompt_set: "ImageNet"
+  only_med_and_few: false
+
+  batch_size: 512
+  dataset: ImageNet_LT
+  dataloader: "paired"
+
+  feature_dim: 1024
+  num_classes: 1000
+  num_epochs: 300
+  num_workers: 12
+
+  c_regularization: 50

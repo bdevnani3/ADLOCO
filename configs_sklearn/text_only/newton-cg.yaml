@@ -1,0 +1,22 @@
+clip:
+  visual_backbone: 'RN50'
+
+shuffle: true
+
+dataset_variant: "Balanced_text"
+
+optimizer_variant: "newton-cg"
+
+training_opt:
+
+  variation: "text_only" # This determines the rule for combining the text and images
+  prompt_set: "ImageNet"
+
+  batch_size: 512
+  dataset: ImageNet_LT
+  dataloader: "paired"
+
+  feature_dim: 1024
+  num_classes: 1000
+  num_epochs: 300
+  num_workers: 12
